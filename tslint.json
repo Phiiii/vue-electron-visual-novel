@@ -17,6 +17,7 @@
     "no-consecutive-blank-lines": false,
     "arrow-parens": false,
     "trailing-comma": false,
-    "no-shadowed-variable": false
+    "no-shadowed-variable": false,
+    "no-var-requires": false
   }
 }

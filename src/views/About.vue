@@ -1,10 +1,11 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
+    <button @click="INCREMENT(10)">Increment</button>
     <button @click="setScript">Add Script</button>
-    <button @click="runText">Run Line</button>
+    <button @click="handleClick">Run Line</button>
+    <p>{{speaker}}</p>
     <p>{{line}}</p>
-    <p>{{lineRunning}}</p>
   </div>
 </template>
 
@@ -24,14 +25,14 @@ const About = Vue.extend({
   data() {
     return {
       foo: 'foo'
-    }
+    };
   },
   computed: {
-    ...mapState(['line', 'lineRunning'])
+    ...mapState(['line', 'lineRunning', 'counter', 'speaker'])
   },
   methods: {
     ...mapMutations(['SET_SCRIPT', 'INCREMENT']),
-    ...mapActions(['runText']),
+    ...mapActions(['handleClick']),
     setScript() {
       this.SET_SCRIPT(tutorialScript);
     }

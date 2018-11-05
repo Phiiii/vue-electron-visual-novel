@@ -9,15 +9,10 @@ export interface ScriptOption {
 
 export interface ClickAction {
   runText?: TextOption;
-  runVoice?: VoiceOption;
+  runVoice?: string;
   addSprite?: SpriteOption;
   removeSprite?: SpriteOption;
   removeAllSprites?: boolean;
-}
-
-export interface VoiceOption {
-  voice: NodeRequire | Character;
-  voiceEndsAfterText?: boolean;
 }
 
 export interface TextOption {

@@ -8,7 +8,7 @@ export interface ScriptOption {
 }
 
 export interface ClickAction {
-  runText?: TextOption | string;
+  runText?: TextOption;
   runVoice?: VoiceOption;
   addSprite?: SpriteOption;
   removeSprite?: SpriteOption;

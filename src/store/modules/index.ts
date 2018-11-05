@@ -1,2 +1,2 @@
-export {default} from './counter';
 export * from './counter';
+export * from './novel';

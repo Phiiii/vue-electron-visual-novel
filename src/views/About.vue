@@ -1,21 +1,23 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
-    <button @click="INCREMENT_MAIN_COUNTER">Increment</button>
-    <p>{{main}}</p>
-    <p>{{double}}</p>
-    <button @click="log">Log</button>
+    <button @click="setScript">Add Script</button>
+    <button @click="runText">Run Line</button>
+    <p>{{line}}</p>
+    <p>{{lineRunning}}</p>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 import { createNamespacedHelpers } from 'vuex';
+import tutorialScript from '@/scripts/scripts/tutorial';
+
 const {
-  mapMutations: mapCounterMutations,
-  mapState: mapCounterState,
-  mapGetters: mapCounterGetters
-} = createNamespacedHelpers('counter');
+  mapMutations,
+  mapState,
+  mapActions
+} = createNamespacedHelpers('novel');
 
 const About = Vue.extend({
   name: 'about',
@@ -25,13 +27,13 @@ const About = Vue.extend({
     }
   },
   computed: {
-    ...mapCounterState(['main']),
-    ...mapCounterGetters(['double'])
+    ...mapState(['line', 'lineRunning'])
   },
   methods: {
-    ...mapCounterMutations(['INCREMENT_MAIN_COUNTER']),
-    log() {
-      console.log(this.main);
+    ...mapMutations(['SET_SCRIPT', 'INCREMENT']),
+    ...mapActions(['runText']),
+    setScript() {
+      this.SET_SCRIPT(tutorialScript);
     }
   }
 });

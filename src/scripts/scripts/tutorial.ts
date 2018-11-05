@@ -1,8 +1,10 @@
+import { Script } from '../interfaces/script';
+
 const tutorialScript: Script = {
   actions: [{
-    runText: 'Hello! My name is Phi. Welcome to Caravan visual novel engine.'
+    runText: { text: 'Hello! My name is Phi. Welcome to Caravan visual novel engine.' }
   }, {
-    runText: `How about we start with the basics?`
+    runText: { text: `How about we start with the basics?` }
   }]
 };
 
